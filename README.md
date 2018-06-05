@@ -11,4 +11,4 @@
 * 可对同一文件多次剪裁。
 
 ## 运行环境：
-* 需要安装JRE 1.8版本
+* 需要下载安装[JRE 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
