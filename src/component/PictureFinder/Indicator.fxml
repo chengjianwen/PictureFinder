@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<fx:root type="javafx.scene.Group" xmlns:fx="http://javafx.com/fxml">
+    <ImageView fx:id="viewer" fitHeight="150.0" fitWidth="159.0" layoutX="21.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
+    <Rectangle fx:id="finder" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" stroke="BLACK" strokeType="OUTSIDE" width="200.0" />
+</fx:root>

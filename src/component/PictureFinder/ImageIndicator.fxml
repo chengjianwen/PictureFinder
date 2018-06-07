@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="628.0" prefWidth="816.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <ScrollPane fx:id="scroller" layoutX="211.0" layoutY="11.0" prefHeight="582.0" prefWidth="515.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <Group>
+               <children>
+                  <Group>
+                     <children>
+                        <ImageView fx:id="background" pickOnBounds="true" preserveRatio="true" />
+                        <Rectangle fx:id="cover" arcHeight="5.0" arcWidth="5.0" fill="#2197ff87" height="400.0" stroke="RED" strokeType="INSIDE" width="320.0" />
+                     </children>
+                  </Group>
+                  <Group fx:id="finderGroup" />
+               </children>
+            </Group>
+         </content>
+      </ScrollPane>
+      <VBox layoutX="10.0" layoutY="11.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <ComboBox fx:id="indicatorComboBox" prefHeight="29.0" prefWidth="176.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="180.0" spacing="15.0">
+               <children>
+                  <Button fx:id="openButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="打开" />
+                  <Button fx:id="clipButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="剪裁" />
+               </children>
+            </HBox>
+            <CheckBox fx:id="autoClipCheckBox" disable="true" mnemonicParsing="false" text="打开后自动剪裁" />
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Button fx:id="saveButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="保存(当前)">
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                              <RadioMenuItem fx:id="saveCurrentRadioMenuItem" mnemonicParsing="false" selected="true" text="保存当前">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tg2" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="saveAllRadioMenuItem" mnemonicParsing="false" text="保存所有" toggleGroup="$tg2" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu></Button>
+                  <Button fx:id="deleteButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="删除(当前)">
+                     <contextMenu>
+                        <ContextMenu>
+                           <items>
+                              <RadioMenuItem fx:id="deleteCurrentRadioMenuItem" mnemonicParsing="false" selected="true" text="删除当前">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tg3" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="deleteAllRadioMenuItem" mnemonicParsing="false" text="删除所有" toggleGroup="$tg3" />
+                           </items>
+                        </ContextMenu>
+                     </contextMenu></Button>
+               </children>
+            </HBox>
+            <CheckBox fx:id="autoDeleteCheckBox" disable="true" mnemonicParsing="false" text="保存后自动删除" />
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Button fx:id="zoomInButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="放大" />
+                  <Button fx:id="zoomOutButton" disable="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="缩小" />
+               </children>
+            </HBox>
+            <CheckBox fx:id="autoScaleCheckBox" disable="true" mnemonicParsing="false" text="自动缩放至合适大小" />
+            <GridPane fx:id="zoomGridPane" alignment="CENTER" disable="true" prefHeight="80.0" prefWidth="180.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="topRadioButton" mnemonicParsing="false" GridPane.columnIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tg1" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="leftRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="bottomRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="rightRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="centerRadioButton" mnemonicParsing="false" selected="true" toggleGroup="$tg1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="leftTopRadioButton" mnemonicParsing="false" toggleGroup="$tg1" />
+                  <RadioButton fx:id="leftBottomRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="rightTopRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.columnIndex="2" />
+                  <RadioButton fx:id="rightBottomRadioButton" mnemonicParsing="false" toggleGroup="$tg1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <CheckBox fx:id="autoLocationCheckBox" disable="true" mnemonicParsing="false" text="自动定位(宽度优先)">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <RadioMenuItem fx:id="widthFirstRadioMenuItem" mnemonicParsing="false" selected="true" text="宽度优先">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tg4" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="heightFirstRadioMenuItem" mnemonicParsing="false" text="高度优先" toggleGroup="$tg4" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </CheckBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <ListView fx:id="clippedListView" layoutX="10.0" layoutY="373.0" prefHeight="244.0" prefWidth="190.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="373.0" />
+    </children>
+</fx:root>
